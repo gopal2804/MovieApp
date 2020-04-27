@@ -1,0 +1,31 @@
+#searchh1{
+    margin-top: 20%;
+    font-family: Dancing;
+    color: white;
+}
+
+#moviesh1{
+    margin-left: 30%;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    font-family: Dancing;
+    font-weight: 600;
+    color: white;
+}
+body{
+    background-color: black;
+}
+
+.card-title{
+    font-family: Lato;
+}
+
+.card{
+    margin-left: 12.5%;
+    background-color: white ;
+    border: 4px purple solid;
+}
+
+.card-img{
+    height: 24rem;
+}

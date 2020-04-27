@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>Movie App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/design.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <a class="navbar-brand text-primary" href="#">Movie App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-success" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-success" href="/">Search <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 id="moviesh1">Search Result <span style="color: grey;">></span> <%= searchQuery %></h1>
+
+    <% data['results'].forEach((movie)=>{ %>
+    <div class="card mb-5 w-75">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src='https://image.tmdb.org/t/p/w600_and_h900_bestv2<%=movie["poster_path"]%>'
+                    class="card-img img-fluid" alt='<%= movie["original_title"] %>'>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2 class="card-title"><%= movie["original_title"] %></h2>
+                    <hr>
+                    <p class="card-text"><%= movie["overview"] %></p>
+                    <hr>
+                    <br>
+                    <p class="card-text"><b>Release Date:</b> <%= movie["release_date"] %></p>
+                    <p class="card-text"><b>Total Votes:</b> <%= movie["vote_count"] %></p>
+                    <p class="card-text"><b>Average Rating:</b><%= movie["vote_average"] %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
