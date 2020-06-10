@@ -23,6 +23,6 @@ app.get("/results",(req,res)=>{
     });
 });
 
-app.listen(process.env.PORT,process.env.ID,()=>{
+app.listen(3000,()=>{
     console.log("server started");
 });
